@@ -49,10 +49,8 @@ class Browser{															//Browser class
 	
 }
 
-
-
 class mainClass{														//Main Class
 	public static void main(String[] args) {							//Main Method
-		new Browser();													//Call constructor with 0 parameters
+		new Browser();													//Call constructor for initialize
 	}
 }
