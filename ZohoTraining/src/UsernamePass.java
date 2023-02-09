@@ -5,7 +5,7 @@ public class UsernamePass {
 		String[] User, Pass;
 		String request;
 		User = new String[]{ "Ardra", "Eldho", "Bharath" };
-		Pass = new String[]{ "njn shoopera", "abcdefg", "BoomBoom" };
+		Pass = new String[]{ "jambo", "abcdefg", "BoomBoom" };
 		System.out.print("Enter Username to Display Password:");
 		request = sc.nextLine();
 		for(int i=0;i<User.length;i++) {
