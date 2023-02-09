@@ -1,4 +1,4 @@
-import java.util.*;														//util for scanner
+import java.util.*;														//util for Scanner and Arrays
 
 class Browser{															//Browser class
 	private static String[] url;										//private variable for urls
@@ -11,21 +11,21 @@ class Browser{															//Browser class
 	
 	Browser(String[] url) {												//Second Constructor
 		this.url = url;
-		System.out.print("New Session?(true/false):");					//Ask for second session
+		System.out.print("New Session?(true/false): ");					//Ask for second session
 		boolean newSession = ip.nextBoolean();
 		if(newSession == true) {
-			url = setMethod(url);										//Update url
-			new Browser(url);											//run Second Constructor
+			this.url = setMethod(this.url);								//Update url
+			new Browser(this.url);										//run Second Constructor
 		}
 		else {
-			System.out.println(Arrays.toString(url));					//print if  no update
+			System.out.println("The URLs in the history are: " + Arrays.toString(this.url));					//print if  no update
 		}
 	}
 
 	String[] setMethod() {												//method for initialization
-		System.out.print("Enter the number of URLs:");
+		System.out.print("Enter the number of URLs: ");
 		int n = ip.nextInt();
-		System.out.println("Enter the URLs:");
+		System.out.println("Enter the URLs: ");
 		url = new String[n];
 		for(int i=0; i<n; i++) {
 			url[i] = ip.next();
@@ -35,7 +35,7 @@ class Browser{															//Browser class
 	}
 	
 	String[] setMethod(String[] url) {									//method for updation
-		System.out.print("Enter the number of URLs to add:");
+		System.out.print("Enter the number of URLs to add: ");
 		int n = ip.nextInt();
 		int totalURLs = n + url.length;
 		String[] newURL = new String[totalURLs];
