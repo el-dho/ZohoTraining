@@ -1,6 +1,6 @@
 import java.util.*;
 public class Area{
-	double area;
+	static double area;
 	
 	Area(double radius){
 		this.area = 3.14 * radius * radius;
