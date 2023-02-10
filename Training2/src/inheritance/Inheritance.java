@@ -1,6 +1,6 @@
 package inheritance;
 
-public class Main {
+public class Inheritance {
 	public static void main(String[] args) {
 		Employee emp = new Employee();
 		System.out.println("Company Name: " + emp.companyName + "\nEmployee ID: " + emp.employeeID);
