@@ -24,7 +24,7 @@ public class Aggregation {
 		Team t1 = new Team("Desk");
 		Team t2 = new Team("CRM");
 		
-		EmployeeZ emp1 = new EmployeeZ("Ramesh",t1);        //Aggregation means object inside object declaration
+		EmployeeZ emp1 = new EmployeeZ("Ramesh",t1);        //Aggregation means object parameter inside object declaration
 		EmployeeZ emp2 = new EmployeeZ("Suresh",t2);
 		EmployeeZ emp3 = new EmployeeZ("Bromesh",t1);
 		
