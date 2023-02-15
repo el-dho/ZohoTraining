@@ -2,5 +2,8 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="Inheritance"/>
+	<classpathentry kind="src" path="Polymorphism"/>
+	<classpathentry kind="src" path="Abstraction"/>
+	<classpathentry kind="src" path="Encapulation"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
