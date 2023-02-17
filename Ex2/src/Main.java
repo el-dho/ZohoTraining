@@ -1,3 +1,4 @@
+import java.util.*;
 public class Main{
 	public static void main(String[] args){
 		Browser tabOne = new GoogleChrome();
@@ -5,18 +6,29 @@ public class Main{
 		Browser tabThree = new Firefox();
 		Browser tabFour = new GoogleChrome();
 		Browser tabFive = new GoogleChrome();
-		Browser[] allBrowsers = new Browser[5];
-		allBrowsers[0] = tabOne;
-		allBrowsers[1] = tabTwo;
-		allBrowsers[2] = tabThree;
-		allBrowsers[3] = tabFour;
-		allBrowsers[4] = tabFive;
-		int chromeTabs = Browser.instanceOfChrome(allBrowsers);
+		Browser tabSix = new Browser();
+		tabSix.whoAmI();
+		tabTwo.whoAmI();
+		tabFive.whoAmI();
+		Browser[] allBrowsers = {tabOne,tabTwo,tabThree,tabFour,tabFive,tabSix};
+		int chromeTabs = GoogleChrome.instanceOfChrome(allBrowsers);
 		System.out.println("No. of Google Chrome tabs: " + chromeTabs);
+		Browser browser = new Firefox();
+		browser.addContainer("facebookContainer");
+		browser.addContainer("Mails");
+		browser.addContainer("Private Browsing");
+		String[] containers = browser.viewAllContainers();
+		System.out.println("Containers Present: " + Arrays.toString(containers));
+		browser.leaveContainer("facebookContainer");
+		containers = browser.viewAllContainers();
+		System.out.println("Containers Present: " + Arrays.toString(containers));
 	}
 }
 
-class Browser {
+class Browser implements MultipleAccountContainers{
+	
+	private static String[] containersPresent = new String[0];
+
 	Browser() {
 		
 	}
@@ -25,15 +37,32 @@ class Browser {
 		System.out.println("I am a browser");
 	}
 	
-	static int instanceOfChrome(Browser[] allBrowsers) {
-		int chromeTabs = 0;
-		for(Browser tab : allBrowsers) {
-			if(tab instanceof GoogleChrome) {
-				chromeTabs++;
+	public void addContainer(String container) {
+		int lenContainer = Browser.containersPresent.length;
+		String[] newContainers = new String[lenContainer+1];
+		for(int i = 0;i<lenContainer;i++) {
+			newContainers[i] = Browser.containersPresent[i];
+		}
+		newContainers[lenContainer] = container;
+		Browser.containersPresent = newContainers;
+	}
+
+	public void leaveContainer(String container) {
+		int lenContainer = Browser.containersPresent.length;
+		String[] newContainers = new String[lenContainer - 1];
+		for(int i = 0,j =0; i<lenContainer;i++) {
+			if(!Objects.equals(Browser.containersPresent[i],container)) {
+				newContainers[j] = Browser.containersPresent[i];
+				j++;
 			}
 		}
-		return chromeTabs;
+		Browser.containersPresent = newContainers;
 	}
+
+	public String[] viewAllContainers() {
+		return containersPresent;
+	}
+	
 }
 
 class GoogleChrome extends Browser {
@@ -43,7 +72,6 @@ class GoogleChrome extends Browser {
 		versionNumber = 1.0f;
 	}
 	GoogleChrome() {
-		//super();
 	}
 	
 	@Override
@@ -52,7 +80,9 @@ class GoogleChrome extends Browser {
 	}
 	
 	public void setPermissions() {
-		
+		isLocationAccessible = false;
+		isCameraAccessible = false;
+		isMicrophoneAccessible = false;
 	}
 	
 	public void setLocationAccessible(boolean isLocationAccessible) {
@@ -72,15 +102,32 @@ class GoogleChrome extends Browser {
 		this.isCameraAccessible = isCameraAccessible;
 		this.isMicrophoneAccessible = isMicophoneAccessible;
 	}
+	
+	static int instanceOfChrome(Browser[] allBrowsers) {
+		int chromeTabs = 0;
+		for(Browser tab : allBrowsers) {
+			if(tab instanceof GoogleChrome) {
+				chromeTabs++;
+			}
+		}
+		return chromeTabs;
+	}
 }
 
 class Firefox extends Browser {
+	
+	
 	Firefox() {
-		//super();
 	}
 	
 	@Override
 	public void whoAmI() {
 		System.out.println("I am Firefox");
 	}
+
+}
+
+interface MultipleAccountContainers {
+	void addContainer(String container);
+	void leaveContainer(String container);
 }
