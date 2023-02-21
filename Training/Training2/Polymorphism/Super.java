@@ -28,6 +28,7 @@ class EmployeeComp extends ZohoComp{
 		super.method("This is the super method");
 	}
 	EmployeeComp(){
+		name = "Eldho";
 		super();
 	}
 }

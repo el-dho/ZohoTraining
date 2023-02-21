@@ -17,7 +17,6 @@ class A{
 }
 
 class B extends A{
-	@Override
 	void print() {
 		super.print();
 		System.out.println("This is from printMethod of class B");

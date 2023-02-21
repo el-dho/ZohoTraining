@@ -6,6 +6,7 @@ public class Interface {
 		comp.getName();
 		comp = new Puma();
 		comp.getName();
+		comp = new CompanyXYZ();
 	}
 }
 

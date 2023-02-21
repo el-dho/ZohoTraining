@@ -5,6 +5,7 @@ public class Abstract {
 		obj.printMethod();
 		obj = new CompB();
 		obj.printMethod();
+		Comp obj1 = new Comp();
 	}
 }
 
