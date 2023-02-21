@@ -3,7 +3,9 @@ public class GoogleChrome extends Browser {
 	
 	Scanner ip = new Scanner(System.in);
 	
-	private boolean isLocationAccessible, isCameraAccessible, isMicrophoneAccessible;
+	private boolean isLocationAccessible;
+	private boolean isCameraAccessible;
+	private boolean isMicrophoneAccessible;
 	
 	static final float VERSION_NUMBER;
 	
@@ -12,6 +14,7 @@ public class GoogleChrome extends Browser {
 	}
 	
 	GoogleChrome() {
+		super();
 		//Empty Constructor
 	}
 	
@@ -21,16 +24,16 @@ public class GoogleChrome extends Browser {
 	}
 	
 	public void setPermissions() {
-		setLocationAccessible(false);
+		isLocationAccessible = false;
 		isCameraAccessible = false;
 		isMicrophoneAccessible = false;
 	}
 	
 	public void setPermissions(boolean access) {
-		System.out.print("1. Set Location Access\n2. Set Camera Access\n3. Set Microphone Access");
+		System.out.println("1. Set Location Access\n2. Set Camera Access\n3. Set Microphone Access");
 		int set = ip.nextInt();
 		switch(set) {
-			case 1: setLocationAccessible(access);
+			case 1: isLocationAccessible = access;
 					break;
 			case 2: isCameraAccessible = access;
 					break;
@@ -42,16 +45,15 @@ public class GoogleChrome extends Browser {
 	}
 
 	public void setPermissions(boolean isLocationAccessible, boolean isCameraAccessible, boolean isMicophoneAccessible) {
-		this.setLocationAccessible(isLocationAccessible);
+		this.isLocationAccessible = isLocationAccessible;
 		this.isCameraAccessible = isCameraAccessible;
 		this.isMicrophoneAccessible = isMicophoneAccessible;
 	}
-
-	public boolean isLocationAccessible() {
-		return isLocationAccessible;
-	}
-
-	public void setLocationAccessible(boolean isLocationAccessible) {
-		this.isLocationAccessible = isLocationAccessible;
+	
+	public void viewPermissions() {
+		System.out.println("Location Accessible : " + isLocationAccessible);
+		System.out.println("Camera Accessible : " + isCameraAccessible);
+		System.out.println("Microphone Accessible : " + isMicrophoneAccessible);
+		System.out.println();
 	}
 }
