@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Arrays;
 public class Main {
 	
 	public static void main(String[] args){
@@ -39,7 +39,6 @@ public class Main {
 		browser.addContainer("facebookContainer");
 		browser.addContainer("Mails");
 		browser.addContainer("Private Browsing");
-		browser.addContainer("Mails");
 		String[] containers = browser.viewAllContainers();
 		System.out.println("Containers Present: " + Arrays.toString(containers));
 		browser.leaveContainer("facebookContainer");

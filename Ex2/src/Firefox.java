@@ -1,4 +1,4 @@
-import java.util.Objects;
+import java.util.*;
 
 public class Firefox extends Browser implements MultipleAccountContainers {
 	
@@ -18,14 +18,7 @@ public class Firefox extends Browser implements MultipleAccountContainers {
 	public void addContainer(String container) {
 		int lenContainer = containersPresent.length;
 		String[] newContainers = new String[lenContainer+1];
-		for(int i = 0;i<lenContainer;i++) {
-			if(containersPresent[i]!=container) {
-				newContainers[i] = containersPresent[i];
-			}
-			else {
-				System.out.println("Error: Container Already Present");
-			}
-		}
+		System.arraycopy(containersPresent, 0, newContainers, 0, lenContainer);
 		newContainers[lenContainer] = container;
 		containersPresent = newContainers;
 		
@@ -39,9 +32,6 @@ public class Firefox extends Browser implements MultipleAccountContainers {
 			if(!Objects.equals(containersPresent[i],container)) {
 				newContainers[j] = containersPresent[i];
 				j++;
-			}
-			else {
-				System.out.println("Error: Container " + container + " not found");
 			}
 		}
 		containersPresent = newContainers;
