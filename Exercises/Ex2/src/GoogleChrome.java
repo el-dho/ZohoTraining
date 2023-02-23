@@ -15,7 +15,6 @@ public class GoogleChrome extends Browser {
 	
 	GoogleChrome() {
 		super();
-		//Empty Constructor
 	}
 	
 	@Override

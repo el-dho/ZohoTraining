@@ -6,7 +6,6 @@ public class Firefox extends Browser implements MultipleAccountContainers {
 	
 	Firefox() {
 		super();
-		//Empty Constructor
 	}
 	
 	@Override

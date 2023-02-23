@@ -1,7 +1,7 @@
 public class Browser {
 	
+	//Empty Constructor
 	Browser() {
-		//Empty Constructor
 	}
 	
 	public void whoAmI() {
@@ -19,11 +19,11 @@ public class Browser {
 	}
 	
 	public void addContainer(String container) {
-		//Method made to call browser.addContainer
+		//Empty Method made to call browser.addContainer
  }
 	
 	public void leaveContainer(String container) {
-		//Method made to call browser.leaveContainer
+		//Empty Method made to call browser.leaveContainer
 	}
 	
 	public String[] viewAllContainers() {
