@@ -2,6 +2,7 @@ public class Browser {
 	
 	//Empty Constructor
 	Browser() {
+		System.out.println("This is inside Browser Constructor");
 	}
 	
 	public void whoAmI() {

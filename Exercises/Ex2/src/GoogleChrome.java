@@ -15,6 +15,7 @@ public class GoogleChrome extends Browser {
 	
 	GoogleChrome() {
 		super();
+		System.out.println("This is inside Google Chrome constructor");
 	}
 	
 	@Override
@@ -28,19 +29,13 @@ public class GoogleChrome extends Browser {
 		isMicrophoneAccessible = false;
 	}
 	
-	public void setPermissions(boolean access) {
-		System.out.println("1. Set Location Access\n2. Set Camera Access\n3. Set Microphone Access");
-		int set = ip.nextInt();
-		switch(set) {
-			case 1: isLocationAccessible = access;
-					break;
-			case 2: isCameraAccessible = access;
-					break;
-			case 3: isMicrophoneAccessible = access;
-					break;
-			default: System.out.println("Error");
-		}
-			
+	public void setPermissions(boolean access, Property key) {
+		if(key == Property.Location)
+			isLocationAccessible = access;
+		if(key == Property.Camera)
+			isCameraAccessible = access;
+		if(key == Property.Microphone)
+			isMicrophoneAccessible = access;
 	}
 
 	public void setPermissions(boolean isLocationAccessible, boolean isCameraAccessible, boolean isMicophoneAccessible) {

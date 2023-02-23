@@ -22,7 +22,7 @@ public class Main {
 		GoogleChrome tab = new GoogleChrome();
 		tab.setPermissions();
 		tab.viewPermissions();
-		tab.setPermissions(true);
+		tab.setPermissions(true,Property.Location);
 		tab.viewPermissions();
 		tab.setPermissions(true, false, true);
 		tab.viewPermissions();
