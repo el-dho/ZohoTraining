@@ -15,7 +15,17 @@ public class Main3 {
 					str.append(temp + " ## " + 1 + "\n");
 				}
 				else {
-					str.replace(index+temp.length()+4, index+temp.length()+5, String.valueOf(Integer.parseInt(String.valueOf(str.charAt(index+temp.length()+4)))+1));
+					int pos = index + temp.length() + 4;
+					System.out.println(pos);
+					char num = str.charAt(pos);
+					System.out.println(num);
+					String numStr = String.valueOf(num);
+					System.out.println(numStr);
+					int number = Integer.parseInt(numStr);
+					System.out.println(number);
+					String newNum = String.valueOf(++number);
+					System.out.println(newNum);
+					str.replace(pos, pos+1,newNum);
 				}
 				System.out.println(str);
 				
