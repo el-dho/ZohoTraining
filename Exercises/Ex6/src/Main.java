@@ -25,19 +25,31 @@ public class Main {
 			else if(command.equals("2")) {
 				System.out.println("Enter steps to go back:");
 				int stepsBack = sc.nextInt();
-				System.out.println(obj.back(stepsBack));
+				try {
+					System.out.println(obj.back(stepsBack));
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 			
 			else if(command.equals("3")) {
 				System.out.println("Enter steps to go forward:");
 				int stepsForward = sc.nextInt();
-				System.out.println(obj.forward(stepsForward));
+				try {
+					System.out.println(obj.forward(stepsForward));
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 			
 			else if(command.equals("4")) {
 				System.out.println("Enter Position to get URL:");
 				int position = sc.nextInt();
-				System.out.println(obj.get(position));
+				try {
+					System.out.println(obj.get(position));
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 			
 			else if(command.equals("exit")) {

@@ -27,7 +27,7 @@ public class BrowserHistory {
 		}
 	}
 	
-	public String back(int steps) {
+	public String back(int steps) throws Exception {
 		try {
 			if(steps>position)
 				throw new NoHistoryFoundException();
@@ -36,11 +36,11 @@ public class BrowserHistory {
 		}
 		catch (NoHistoryFoundException | ArrayIndexOutOfBoundsException e) {
 			System.out.println(e);
+			throw e;
 		}
-		return "";
 	}
 	
-	public String forward(int steps) {
+	public String forward(int steps) throws Exception {
 		try {
 			if(steps>history.length-1-position)
 				throw new NoHistoryFoundException();
@@ -49,11 +49,11 @@ public class BrowserHistory {
 		}
 		catch (NoHistoryFoundException | ArrayIndexOutOfBoundsException e) {
 			System.out.println(e);
+			throw e;
 		}
-		return "";
 	}
 	
-	public String get (int position) {
+	public String get (int position) throws Exception {
 		try {
 			if(position<0)
 				throw new InvalidPositionException();
@@ -63,11 +63,13 @@ public class BrowserHistory {
 			}
 		catch (InvalidPositionException e) {
 			System.out.println(e);
+			throw e;
 		}
 		catch (ArrayIndexOutOfBoundsException e) {
 			System.out.println(e + "Invalid Position");
+			throw e;
 		}
-		return "";
+		
 	}
 	
 	public String[] addSpace(String[] history) {
