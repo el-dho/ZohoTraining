@@ -15,9 +15,9 @@ public class BrowserHistory {
 	public void visit(String url) {
 		try {
 			boolean urlValid = url.contains(".org") || url.contains(".in") || url.contains(".com");
-			if(!urlValid)
+			if(!urlValid) {
 				throw new InvalidURLException();
-
+			}
 			position++;
 			history = addSpace(history);
 			history[position] = url;
@@ -29,8 +29,9 @@ public class BrowserHistory {
 	
 	public String back(int steps) throws Exception {
 		try {
-			if(steps>position)
+			if(steps>position) {
 				throw new NoHistoryFoundException();
+			}
 			position -= steps;
 			return history[position];
 		}
@@ -42,8 +43,9 @@ public class BrowserHistory {
 	
 	public String forward(int steps) throws Exception {
 		try {
-			if(steps>history.length-1-position)
+			if(steps>history.length-1-position) {
 				throw new NoHistoryFoundException();
+			}
 			position += steps;
 			return history [position];
 		}
@@ -55,10 +57,12 @@ public class BrowserHistory {
 	
 	public String get (int position) throws Exception {
 		try {
-			if(position<0)
+			if(position<0) {
 				throw new InvalidPositionException();
-			if(position>history.length)
+			}
+			if(position>history.length) {
 				throw new ArrayIndexOutOfBoundsException();
+			}
 			return history[position];
 			}
 		catch (InvalidPositionException e) {

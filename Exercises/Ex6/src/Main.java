@@ -56,8 +56,9 @@ public class Main {
 				System.out.println("Bye");
 				break;
 			}
-			else
+			else {
 				System.out.println("Invalid Input");
+			}
 		}
 	}
 }
