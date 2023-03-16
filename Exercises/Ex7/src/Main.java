@@ -21,6 +21,7 @@ public class Main {
 		System.out.println();
 		obj1.updateHistory(2, "www.poha.com");
 		obj1.fetchHistory();
+		obj1.search(".com");
 		
 		BrowserHistory2 obj2 = new BrowserHistory2();
 		obj2.visit("www.cliq.com");
@@ -36,7 +37,7 @@ public class Main {
 		System.out.println(obj2.urlLinkedHashMap);
 		System.out.println("Tree Map:");
 		System.out.println(obj2.urlTreeMap);
-		
+		obj2.search("facebook");
 	}
 
 }

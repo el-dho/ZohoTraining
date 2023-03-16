@@ -59,7 +59,7 @@ public class BrowserHistory2 {
 	}
 	
 	public void search(String searchWord) {
-		ArrayList<String> allUrls = new ArrayList<>();
+		HashSet<String> allUrls = new HashSet<>();
 		System.out.println("After Searching in Hash Map:");
 		for(ArrayList<String> urlList : urlHashMap.values()) {
 			allUrls.addAll(urlList);
