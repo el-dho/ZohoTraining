@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<div class="box">
+		<h1>Sign Up Page</h1>
+			<form action="" class="form" id="form">
+				<label for="Name">Name</label><br>
+				<input type="text" id="name" name="name" placeholder="Enter name" onKeyUp = "validateName()"><br>
+				<div id="nameError"></div>
+				
+				<label for="username">Username</label><br>
+				<input type="text" id="username" name="username" placeholder="Enter username" onKeyUp = "validateUsername()"><br>
+				<div id="usernameError"></div>
+				
+				<label for="username">Password</label><br>
+				<input type="password" id="password" name="password" placeholder="Enter password" onKeyUp = "validatePassword()"><br>
+				<div id="passwordError"></div>
+				
+				<label for="address">Address</label><br>		
+				<textarea name="address" rows="3" cols="37" placeholder="Enter Address" onKeyUp = "validateAddress()"></textarea><br>
+				<div id="addressError"></div>
+				
+				<input type="submit" value="Sign Up" class="btn"><br>
+				<input type="reset" value="Reset"><br>
+				<a href="login.html">Login here!</a>
+			</form>
+	</div>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
