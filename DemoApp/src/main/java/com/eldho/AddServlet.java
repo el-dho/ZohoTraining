@@ -14,29 +14,27 @@ import javax.servlet.http.HttpSession;
 
 //@WebServlet("/add")
 
-public class AddServlet extends HttpServlet{
+public class AddServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-		
+
 		int i = Integer.parseInt(req.getParameter("num1"));
 		int j = Integer.parseInt(req.getParameter("num2"));
-		
+
 		int k = i + j;
-		
-		Cookie cookie = new Cookie("k",k + "");
+
+		Cookie cookie = new Cookie("k", k + "");
 		res.addCookie(cookie);
-		
+
 //		HttpSession session = req.getSession();
 //		session.setAttribute("k", k);
 //		
 		res.sendRedirect("sq");
-		
+
 //		res.sendRedirect("sq?k=" + k);
-		
+
 //		req.setAttribute("k", k);
 //		RequestDispatcher rd = req.getRequestDispatcher("sq");
 //		rd.forward(req, res);
-		
-		
-		
+
 	}
 }

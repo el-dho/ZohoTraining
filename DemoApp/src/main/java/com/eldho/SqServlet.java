@@ -16,32 +16,32 @@ import javax.servlet.http.HttpSession;
 
 public class SqServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
-		
+
 		Cookie[] cookies = req.getCookies();
 		int k = 0;
-		
-		for(Cookie c : cookies) {
-			if(c.getName().equals("k")) {
+
+		for (Cookie c : cookies) {
+			if (c.getName().equals("k")) {
 				k = Integer.parseInt(c.getValue());
 			}
 		}
-		
+
 //		HttpSession session = req.getSession();
 //		int k = (int) session.getAttribute("k");
-		
+
 //		int k  = Integer.parseInt(req.getParameter("k"));
-		
+
 //		int k = (int) req.getAttribute("k");
-		
+
 		k = k * k;
-		
+
 		PrintWriter out = res.getWriter();
 		out.println("Result is :" + k);
-		
+
 		ServletContext ctx = getServletContext();
 		String str = ctx.getInitParameter("phone");
 		out.println("From servlet context: " + str);
-		
+
 		ServletConfig cfg = getServletConfig();
 		str = cfg.getInitParameter("colour");
 		out.println("From servlet config: " + str);
